@@ -7,5 +7,12 @@ export const telegramAuthAccessToken = async (
   if (typeof document === "undefined" || typeof window === "undefined") return;
 
   const scriptNode = createScript({ ...params });
+
+  const onLoad = (e: any) => {
+    console.log(e, "scriptNode");
+    scriptNode.removeEventListener("load", onLoad);
+  };
+  scriptNode.addEventListener("load", onLoad);
+
   document.body.appendChild(scriptNode);
 };
