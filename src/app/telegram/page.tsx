@@ -13,10 +13,11 @@ export default function Telegram() {
               url: "https://oauth.telegram.org/auth",
               query: {
                 bot_id: 6923708369,
-                request_access: "write",
-                origin: "https%3A%2F%2Fbean-go-newttt.vercel.app",
+                request_access: true,
+                origin: "https://bean-go-newttt.vercel.app",
                 embed: 1,
-                // return_to: redirectUrl,
+                return_to:
+                  "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
                 lang: "en",
               },
             },
@@ -66,8 +67,8 @@ export default function Telegram() {
         onClick={() => {
           telegramAuthAccessToken({
             botUsername: "portkey_connect_bot",
-            authCallbackUrl:
-              "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
+            // authCallbackUrl:
+            //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
           });
         }}>
         telegram
