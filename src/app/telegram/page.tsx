@@ -8,7 +8,7 @@ export default function Telegram() {
       <div
         onClick={() => {
           telegramAuthAccessToken({
-            botUsername: "@portkey_connect_bot",
+            botUsername: "portkey_connect_bot",
             authCallbackUrl:
               "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
           });
