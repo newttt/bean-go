@@ -13,6 +13,7 @@ export default function Telegram() {
     const btn = document.getElementsByClassName(
       "tgme_widget_login_button"
     )[0] as HTMLElement;
+    console.log(btn, "ele==");
     if (!btn) return getEle(count++);
     return btn;
   }, []);
@@ -179,8 +180,10 @@ export default function Telegram() {
               "http://192.168.11.162:5577/api/app/telegramAuth/receive/portkey",
           });
 
-          const ele = await getEle();
-          ele.click();
+          // const ele = await getEle();
+          // ele.click();
+          await sleep(5000);
+          (window as any).TWidgetLogin.auth();
         }}>
         portkey_connect_bot
       </button>
