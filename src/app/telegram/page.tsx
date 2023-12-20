@@ -99,7 +99,7 @@ export default function Telegram() {
             botUsername: "sTestABot",
             // authCallbackUrl:
             //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
-            authCallbackUrl: " http://localhost:3001/telegram-bridge",
+            authCallbackUrl: "https://bean-go-newttt.vercel.app/telegram-bridge",
           });
         }}>
         telegram
