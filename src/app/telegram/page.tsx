@@ -2,11 +2,12 @@
 import { telegramAuthAccessToken } from "@/utils/telegram";
 import React from "react";
 import { stringifyUrl } from "query-string";
+import { getTelegramAuthToken } from "@/utils/TelegramAuthReplace";
 
 export default function Telegram() {
   return (
     <div>
-      <button
+      {/* <button
         onClick={() => {
           const url = stringifyUrl(
             {
@@ -17,7 +18,7 @@ export default function Telegram() {
                 origin: "https://bean-go-newttt.vercel.app",
                 embed: 1,
                 return_to:
-                  "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
+                  "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive/portkey",
                 lang: "en",
               },
             },
@@ -26,7 +27,36 @@ export default function Telegram() {
           window.location.href = url;
         }}>
         auto
-      </button>
+      </button> */}
+      {/* 
+      <button
+        onClick={() => {
+          function haveTgAuthResult() {
+            var locationHash =
+                "http://localhost:3001/telegram#tgAuthResult=eyJpZCI6NjYzMDg2NTM1MiwiZmlyc3RfbmFtZSI6InBvdHRlciIsInBob3RvX3VybCI6Imh0dHBzOlwvXC90Lm1lXC9pXC91c2VycGljXC8zMjBcL1FldkhBcGFUbTR3V2tOb1BhZGxfOGkwaUpWeEw5ZkdKZk1tbW9tbjg0YklxX3lIbzFuU0VsSHl0NmlPZjVEdlEuanBnIiwiYXV0aF9kYXRlIjoxNzAyOTgwMjA0LCJoYXNoIjoiNDQ2ZTkwMzU4MzI1MjBmYTBiYzJmYzRmOGI5ZmE5ODlhNDIwNmQ4ZmM2OGM0NjcyNGJiZWZkMzg5MDkzMGMzZiJ9",
+              re = /[#\?\&]tgAuthResult=([A-Za-z0-9\-_=]*)$/,
+              match;
+            try {
+              // locationHash = location.hash.toString();
+              if ((match = locationHash.match(re))) {
+                location.hash = locationHash.replace(re, "");
+                var data = match[1] || "";
+                data = data.replace(/-/g, "+").replace(/_/g, "/");
+                var pad = data.length % 4;
+                if (pad > 1) {
+                  data += new Array(5 - pad).join("=");
+                }
+                console.log(data, "data==");
+                return JSON.parse(window.atob(data));
+              }
+            } catch (e) {}
+            return false;
+          }
+          const data = haveTgAuthResult();
+          console.log(data, "data===");
+        }}>
+        abcd
+      </button> */}
       {/* <div className="tgme_widget_login medium nouserpic" id="widget_login">
         <button
           className="btn tgme_widget_login_button"
@@ -63,7 +93,7 @@ export default function Telegram() {
         btn
       </button> */}
       <div>---</div>
-      <button
+      {/* <button
         onClick={() => {
           telegramAuthAccessToken({
             botUsername: "portkey_connect_bot",
@@ -72,7 +102,7 @@ export default function Telegram() {
           });
         }}>
         telegram
-      </button>
+      </button> */}
 
       {/* <button
         onClick={() => {
@@ -108,6 +138,18 @@ export default function Telegram() {
         }}>
         Login auth
       </button> */}
+
+      <div
+        onClick={() => {
+          getTelegramAuthToken({
+            botId: "6923708369",
+            redirectUrl: "https://bean-go-newttt.vercel.app/test",
+            // "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive/portkey",
+            origin: "https://bean-go-newttt.vercel.app",
+          });
+        }}>
+        telegram
+      </div>
     </div>
   );
 }
