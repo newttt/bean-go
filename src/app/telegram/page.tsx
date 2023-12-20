@@ -1,10 +1,21 @@
 "use client";
 import { telegramAuthAccessToken } from "@/utils/telegram";
-import React from "react";
+import React, { useCallback } from "react";
 import { stringifyUrl } from "query-string";
 import { getTelegramAuthToken } from "@/utils/TelegramAuthReplace";
+import { sleep } from "@portkey/utils";
+import "./index.css";
 
 export default function Telegram() {
+  const getEle = useCallback(async (count: number = 0) => {
+    if (count > 5) throw "error";
+    await sleep(1000);
+    const btn = document.getElementsByClassName(
+      "tgme_widget_login_button"
+    )[0] as HTMLElement;
+    if (!btn) return getEle(count++);
+    return btn;
+  }, []);
   return (
     <div>
       {/* <button
@@ -94,13 +105,17 @@ export default function Telegram() {
       </button> */}
       <div>---</div>
       <button
-        onClick={() => {
+        onClick={async () => {
           telegramAuthAccessToken({
             botUsername: "sTestABot",
             // authCallbackUrl:
             //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
-            authCallbackUrl: "https://bean-go-newttt.vercel.app/telegram-bridge",
+            authCallbackUrl:
+              "https://l192.168.11.162:5577/api/app/telegramAuth/receive",
           });
+
+          const ele = await getEle();
+          ele.click();
         }}>
         telegram
       </button>
