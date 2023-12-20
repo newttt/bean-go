@@ -143,7 +143,7 @@ export default function Telegram() {
         onClick={() => {
           getTelegramAuthToken({
             botId: "6856370874",
-            redirectUrl: "https://bean-go-newttt.vercel.app/test",
+            redirectUrl: `${location.origin}/telegram-bridge`,
             // "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive/portkey",
             origin: "https://bean-go-newttt.vercel.app",
           });
