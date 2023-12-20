@@ -93,16 +93,17 @@ export default function Telegram() {
         btn
       </button> */}
       <div>---</div>
-      {/* <button
+      <button
         onClick={() => {
           telegramAuthAccessToken({
-            botUsername: "portkey_connect_bot",
+            botUsername: "sTestABot",
             // authCallbackUrl:
             //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
+            authCallbackUrl: " http://localhost:3001/telegram-bridge",
           });
         }}>
         telegram
-      </button> */}
+      </button>
 
       {/* <button
         onClick={() => {
