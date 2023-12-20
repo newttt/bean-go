@@ -109,7 +109,7 @@ export default function Telegram() {
       <button
         onClick={async () => {
           telegramAuthAccessToken({
-            botUsername: "sTestBBot",
+            botUsername: "sTestABot",
             // authCallbackUrl:
             //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
             authCallbackUrl:
