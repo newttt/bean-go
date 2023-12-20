@@ -166,6 +166,24 @@ export default function Telegram() {
         }}>
         telegram
       </div>
+
+      <div>-----------</div>
+      <div>---</div>
+      <button
+        onClick={async () => {
+          telegramAuthAccessToken({
+            botUsername: "portkey_connect_bot",
+            // authCallbackUrl:
+            //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
+            authCallbackUrl:
+              "http://192.168.11.162:5577/api/app/telegramAuth/receive/portkey",
+          });
+
+          const ele = await getEle();
+          ele.click();
+        }}>
+        portkey_connect_bot
+      </button>
     </div>
   );
 }
