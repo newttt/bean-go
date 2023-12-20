@@ -111,7 +111,7 @@ export default function Telegram() {
             // authCallbackUrl:
             //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
             authCallbackUrl:
-              "https://l192.168.11.162:5577/api/app/telegramAuth/receive",
+              "http://192.168.11.162:5577/api/app/telegramAuth/receive/portkey",
           });
 
           const ele = await getEle();
