@@ -183,7 +183,8 @@ export default function Telegram() {
           // const ele = await getEle();
           // ele.click();
           await sleep(5000);
-          (window as any).TWidgetLogin.auth();
+          const ele = await getEle();
+          ele.click();
         }}>
         portkey_connect_bot
       </button>
