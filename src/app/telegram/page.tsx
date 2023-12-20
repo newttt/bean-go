@@ -14,6 +14,7 @@ export default function Telegram() {
       "tgme_widget_login_button"
     )[0] as HTMLElement;
     console.log(btn, "ele==");
+
     if (!btn) return getEle(count++);
     return btn;
   }, []);
@@ -108,7 +109,7 @@ export default function Telegram() {
       <button
         onClick={async () => {
           telegramAuthAccessToken({
-            botUsername: "sTestABot",
+            botUsername: "sTestBBot",
             // authCallbackUrl:
             //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
             authCallbackUrl:
@@ -155,7 +156,7 @@ export default function Telegram() {
         }}>
         Login auth
       </button> */}
-
+{/* 
       <div
         onClick={() => {
           getTelegramAuthToken({
@@ -166,7 +167,7 @@ export default function Telegram() {
           });
         }}>
         telegram
-      </div>
+      </div> */}
 
       <div>-----------</div>
       <div>---</div>
