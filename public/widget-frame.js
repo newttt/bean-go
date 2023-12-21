@@ -146,7 +146,8 @@ var PostMessage = {
         data._cb = ++PostMessage._lastId;
         PostMessage._callbacks[data._cb] = callback;
       }
-      window.parent.postMessage(JSON.stringify(data), origin || '*');
+      console.log(data, 'data===postMessage')
+      // window.parent.postMessage(JSON.stringify(data), origin || '*');
     } catch (e) {
       if (origin) alert('Bot domain invalid');
     }
