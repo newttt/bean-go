@@ -1,8 +1,18 @@
 "use client";
 import Script from "next/script";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function TELEGRAM() {
+  useEffect(() => {
+    const handler = (event: any) => {
+      console.log("TELEGRAM", event);
+    };
+
+    window.addEventListener("message", handler);
+    return () => {
+      window.removeEventListener("message", handler);
+    };
+  }, []);
   return (
     <div>
       <div className="tgme_widget_login medium nouserpic" id="widget_login">
