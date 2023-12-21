@@ -4,20 +4,8 @@ import React, { useCallback } from "react";
 import { stringifyUrl } from "query-string";
 import { getTelegramAuthToken } from "@/utils/TelegramAuthReplace";
 import { sleep } from "@portkey/utils";
-import "./index.css";
 
 export default function Telegram() {
-  const getEle = useCallback(async (count: number = 0) => {
-    if (count > 5) throw "error";
-    await sleep(1000);
-    const btn = document.getElementsByClassName(
-      "tgme_widget_login_button"
-    )[0] as HTMLElement;
-    console.log(btn, "ele==");
-
-    if (!btn) return getEle(count++);
-    return btn;
-  }, []);
   return (
     <div>
       {/* <button
@@ -115,9 +103,6 @@ export default function Telegram() {
             authCallbackUrl:
               "http://192.168.11.162:5577/api/app/telegramAuth/receive/portkey",
           });
-
-          const ele = await getEle();
-          ele.click();
         }}>
         telegram
       </button>
@@ -156,7 +141,7 @@ export default function Telegram() {
         }}>
         Login auth
       </button> */}
-{/* 
+      {/* 
       <div
         onClick={() => {
           getTelegramAuthToken({
@@ -175,20 +160,13 @@ export default function Telegram() {
         onClick={async () => {
           telegramAuthAccessToken({
             botUsername: "portkey_connect_bot",
-            // authCallbackUrl:
-            //   "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
             authCallbackUrl:
-              "http://192.168.11.162:5577/api/app/telegramAuth/receive/portkey",
+              "https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive",
           });
-
-          // const ele = await getEle();
-          // ele.click();
-          await sleep(5000);
-          const ele = await getEle();
-          ele.click();
         }}>
         portkey_connect_bot
       </button>
+      <iframe src="https://oauth.telegram.org/embed/sTestABot?origin=https%3A%2F%2Fopenlogin-test.portkey.finance&return_to=https%3A%2F%2Fopenlogin-test.portkey.finance%2Fsocial-login%2FTelegram%3Ffrom%3Dportkey%26network%3DTESTNET&size=large&userpic=true&request_access=write&lang=en"></iframe>
     </div>
   );
 }

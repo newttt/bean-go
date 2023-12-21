@@ -1,5 +1,5 @@
 import { CreateScriptOptions } from "./types";
-const JS_SRC = "https://telegram.org/js/telegram-widget.js";
+const JS_SRC = "./telegram-widget.js";
 const SCRIPT_ID = "telegram-login";
 
 /**
@@ -19,16 +19,13 @@ export function createScript({
   onAuthCallback,
   requestAccess = "write",
   showAvatar = true,
-  widgetVersion = 22,
+  widgetVersion = 62,
 }: CreateScriptOptions): HTMLScriptElement {
-  const scriptNode = document.getElementById(SCRIPT_ID);
-  if (scriptNode) document.removeChild(scriptNode);
-
   const script = document.createElement("script");
 
   script.async = true;
   script.id = SCRIPT_ID;
-  script.src = `${JS_SRC}?${widgetVersion}`;
+  script.src = JS_SRC;
   script.setAttribute("data-telegram-login", botUsername);
   script.setAttribute("data-size", buttonSize);
 

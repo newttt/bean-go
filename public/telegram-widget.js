@@ -179,7 +179,7 @@
       }
       else if (widgetEl.hasAttribute('data-telegram-login')) {
         widgetId = widgetEl.getAttribute('data-telegram-login');
-        widgetsOrigin = getWidgetsOrigin('https://oauth.telegram.org', 'https://oauth.tg.dev');
+        widgetsOrigin = 'https://oauth.telegram.org'; //getWidgetsOrigin('https://oauth.telegram.org', 'https://oauth.tg.dev');
         widgetElId = 'telegram-login-' + widgetId.replace(/[^a-z0-9_]/ig, '-');
         src = widgetsOrigin + '/embed/' + widgetId + '?origin=' + encodeURIComponent(location.origin || location.protocol + '//' + location.hostname) + '&return_to=' + encodeURIComponent(location.href);
         allowedAttrs = ['size', 'userpic', 'init_auth', 'request_access', 'radius', 'min_width', 'max_width', 'lang'];
