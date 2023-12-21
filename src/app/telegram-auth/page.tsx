@@ -28,7 +28,7 @@ export default function TELEGRAM() {
         </button>
       </div>
 
-      <script src="//telegram.org/js/widget-frame.js?22"></script>
+      <script src="/widget-frame.js"></script>
       <Script>{`(()=>{TWidgetLogin.init('widget_login', 6923708369, {"origin":"https:\/\/core.telegram.org"}, false, "en");})()`}</Script>
     </div>
   );
