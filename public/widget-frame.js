@@ -5,7 +5,7 @@
 
 // MIT license
 
-const telegramOrigin = 'https://oauth.telegram.org/';
+var telegramOrigin = 'https://oauth.telegram.org/';
 
 (function () {
   var lastTime = 0;
