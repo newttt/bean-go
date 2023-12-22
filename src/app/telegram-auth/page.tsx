@@ -19,7 +19,7 @@ export default function TELEGRAM() {
         case TGStauts.unauthorized:
           break;
         case TGStauts.auth_user:
-          location.href = `https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive/portkey${stringify(
+          location.href = `https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive/portkey?${stringify(
             detail.auth_data
           )}`;
           break;
