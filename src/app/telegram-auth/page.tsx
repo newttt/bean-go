@@ -1,9 +1,11 @@
 "use client";
 import Script from "next/script";
 import React, { useEffect } from "react";
+import { stringify } from "query-string";
 
 enum TGStauts {
   unauthorized = "unauthorized",
+  auth_user = "auth_user",
 }
 
 export default function TELEGRAM() {
@@ -12,13 +14,14 @@ export default function TELEGRAM() {
       console.log("TELEGRAM", event);
       const detail = JSON.parse(event.detail);
       console.log("TELEGRAM detail:", detail);
-      // if (detail.event === "ready") {
-      //   if (typeof window === "undefined") return;
-      //   const TWidgetLogin = (window as any).TWidgetLogin;
-      //   await sleep(1000);
-      // }
+
       switch (detail.event) {
         case TGStauts.unauthorized:
+          break;
+        case TGStauts.auth_user:
+          location.href = `https://localtest-applesign.portkey.finance/api/app/telegramAuth/receive/portkey${stringify(
+            detail.auth_data
+          )}`;
           break;
       }
     };
