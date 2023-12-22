@@ -5,7 +5,7 @@
 
 // MIT license
 
-var telegramOrigin = 'https://oauth.telegram.org/';
+var telegramOrigin = 'https://oauth.telegram.org';
 
 (function () {
   var lastTime = 0;
@@ -146,8 +146,10 @@ var PostMessage = {
         data._cb = ++PostMessage._lastId;
         PostMessage._callbacks[data._cb] = callback;
       }
-      console.log(data, 'data===postMessage')
+      // console.log(data, 'data===postMessage')
       // window.parent.postMessage(JSON.stringify(data), origin || '*');
+      const event = new CustomEvent('TG-SEND', { detail: JSON.stringify(data) })
+      window.dispatchEvent(event)
     } catch (e) {
       if (origin) alert('Bot domain invalid');
     }
