@@ -1,12 +1,13 @@
 
 import { tDVWConfig, tDVVConfig } from '../../constants';
 import AElf from 'aelf-sdk';
+import { getContractBasic } from '@portkey/contracts'
 
 
 let inscriptionContract, tokenContract, config, TICK, autoWallet;
 
 const getInscriptionContract = async () => {
-  await getContractBasic({
+  inscriptionContract = await getContractBasic({
     rpcUrl: config.RPC,
     account: autoWallet,
     contractAddress: config.InscriptionContractAddress,
@@ -14,7 +15,7 @@ const getInscriptionContract = async () => {
 }
 
 const getTokenContract = async () => {
-  await getContractBasic({
+  tokenContract = await getContractBasic({
     rpcUrl: config.RPC,
     account: autoWallet,
     contractAddress: config.TokenContractAddress,
@@ -26,7 +27,7 @@ async function autoMint() {
   if (!inscriptionContract) await getInscriptionContract()
   await inscriptionContract.callSendMethod("Inscribe", "", {
     tick: TICK,
-    amt: AMT,
+    amt: 11,
   });
 
   const balance = await tokenContract.callViewMethod("GetBalance", {
