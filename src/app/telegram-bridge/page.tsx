@@ -21,15 +21,8 @@ export default function Test() {
   // }, [replaceHref]);
 
   useEffect(() => {
-    window.addEventListener("DOMContentLoaded", () => {
-      window.addEventListener("beforeunload", () => {
-        return "aaa";
-      });
-    });
-    window.addEventListener("load", () => {
-      window.addEventListener("beforeunload", () => {
-        return "aaa";
-      });
+    window.addEventListener("beforeunload", () => {
+      alert("1");
     });
   }, []);
 
