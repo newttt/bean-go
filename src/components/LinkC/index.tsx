@@ -15,9 +15,9 @@ export default function LinkC() {
       {/* <a href="bingo">
         <Button>Go to bingo</Button>
       </a> */}
-      <a href="tsm">
-        <Button>Go to mingwen</Button>
-      </a>
+      {/* <a href="tsm"> */}
+      {/* <Button>Go to mingwen</Button> */}
+      {/* </a> */}
     </div>
   );
 }
