@@ -9,9 +9,9 @@ export default function Auto() {
       telegramAuthAccessToken({
         botUsername: "portkey_connect_bot",
         authCallbackUrl:
-          "https://aa-portkey.portkey.finance/api/app/telegramAuth/receive",
+          "https://aa-portkey.portkey.finance/api/app/telegramAuth/receive/openlogin",
       });
-    }, 1000);
+    }, 100);
   }, []);
   return <div>Auto</div>;
 }
