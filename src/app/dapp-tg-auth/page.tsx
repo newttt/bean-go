@@ -20,6 +20,16 @@ export default function DappTG() {
           }}>
           go Telegram Auth copy
         </Button>
+
+        <Button
+          onClick={() => {
+            window.open("https://bean-go-newttt.vercel.app/tg-auto");
+          }}>
+          go Telegram Auth tg-auto
+
+        </Button>
+
+        
       </div>
     </div>
   );

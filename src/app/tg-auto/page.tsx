@@ -1,3 +1,5 @@
+"use client";
+
 import { telegramAuthAccessToken } from "@/utils/telegram";
 import React, { useEffect } from "react";
 
