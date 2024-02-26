@@ -1,9 +1,7 @@
 import { createScript } from "./createScript";
 import { CreateScriptOptions } from "./types";
 
-export const telegramAuthAccessToken = async (
-  params: Omit<CreateScriptOptions, "onAuthCallback">
-) => {
+export const telegramAuthAccessToken = async (params: CreateScriptOptions) => {
   if (typeof document === "undefined" || typeof window === "undefined") return;
 
   const scriptNode = createScript({ ...params });

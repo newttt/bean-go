@@ -6,6 +6,7 @@ import { Button } from "antd";
 export default function DappTG() {
   return (
     <div>
+      <div>-----ƒ</div>
       <Button
         onClick={() => {
           window.open("https://bean-go-newttt.vercel.app/tg-auth");
