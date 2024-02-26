@@ -15,7 +15,7 @@ export default function TSM() {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <div>tDVV -&gt;MAINNET, tDVW-&gt;TESTNET </div>
+        <div>tDVV -&gt;MAIN, tDVW-&gt;TESTNET </div>
         <label>
           chainId:
           <input type="text" name="chainId" />
