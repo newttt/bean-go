@@ -20,7 +20,7 @@ ConfigProvider.setGlobalConfig({
 
 export default function Assets() {
   return (
-    <PortkeyProvider networkType="MAIN">
+    <PortkeyProvider networkType="MAINNET">
       <PortkeyAssetProvider pin="111111" originChainId="tDVV">
         <Asset
           onLifeCycleChange={(lifeCycle) => {

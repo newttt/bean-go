@@ -48,7 +48,7 @@ export default function Sign() {
 
   return (
     <div>
-      <PortkeyProvider networkType="MAIN">
+      <PortkeyProvider networkType="MAINNET">
         <div>-----------</div>
         <SignIn
           ref={ref}

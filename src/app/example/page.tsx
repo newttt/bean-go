@@ -5,7 +5,7 @@ import Test from "./test";
 
 export default function Example() {
   return (
-    <PortkeyProvider networkType="MAIN">
+    <PortkeyProvider networkType="MAINNET">
       <Test />
     </PortkeyProvider>
   );
