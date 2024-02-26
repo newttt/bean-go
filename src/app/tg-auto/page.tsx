@@ -7,7 +7,7 @@ export default function Auto() {
   useEffect(() => {
     setTimeout(() => {
       telegramAuthAccessToken({
-        botUsername: "portkey_connect_bot",
+        botUsername: "sTestABot",
         authCallbackUrl:
           "https://aa-portkey.portkey.finance/api/app/telegramAuth/receive/openlogin",
       });
