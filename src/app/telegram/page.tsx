@@ -94,7 +94,7 @@ export default function Telegram() {
         btn
       </button> */}
       <div>---</div>
-      <button
+      {/* <button
         onClick={async () => {
           telegramAuthAccessToken({
             botUsername: "sTestABot",
@@ -105,7 +105,7 @@ export default function Telegram() {
           });
         }}>
         telegram
-      </button>
+      </button> */}
 
       {/* <button
         onClick={() => {
@@ -166,7 +166,7 @@ export default function Telegram() {
         }}>
         portkey_connect_bot
       </button>
-      <iframe src="https://oauth.telegram.org/embed/sTestABot?origin=https%3A%2F%2Fopenlogin-test.portkey.finance&return_to=https%3A%2F%2Fopenlogin-test.portkey.finance%2Fsocial-login%2FTelegram%3Ffrom%3Dportkey%26network%3DTESTNET&size=large&userpic=true&request_access=write&lang=en"></iframe>
+      {/* <iframe src="https://oauth.telegram.org/embed/sTestABot?origin=https%3A%2F%2Fopenlogin-test.portkey.finance&return_to=https%3A%2F%2Fopenlogin-test.portkey.finance%2Fsocial-login%2FTelegram%3Ffrom%3Dportkey%26network%3DTESTNET&size=large&userpic=true&request_access=write&lang=en"></iframe> */}
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function DappTG() {
 
         <Button
           onClick={() => {
-            window.open("https://bean-go-newttt.vercel.app/tg-auto");
+            window.open("https://bean-go-newttt.vercel.app/telegram");
           }}>
           go Telegram Auth tg-auto
 

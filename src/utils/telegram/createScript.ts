@@ -1,5 +1,5 @@
 import { CreateScriptOptions } from "./types";
-const JS_SRC = "./telegram-widget.js";
+const JS_SRC = "https://telegram.org/js/telegram-widget.js";
 const SCRIPT_ID = "telegram-login";
 
 /**
