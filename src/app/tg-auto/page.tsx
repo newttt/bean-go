@@ -7,9 +7,9 @@ export default function Auto() {
   useEffect(() => {
     setTimeout(() => {
       telegramAuthAccessToken({
-        botUsername: "sTestABot",
+        botUsername: "portkey_connect_bot",
         authCallbackUrl:
-          "https://aa-portkey.portkey.finance/api/app/telegramAuth/receive/openlogin",
+          "https://bean-go-newttt.vercel.app/tg-auto",
       });
     }, 100);
   }, []);
